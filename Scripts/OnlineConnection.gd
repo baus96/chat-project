@@ -56,7 +56,7 @@ func _on_connection_failed():
 func _on_server_disconnected():
 	print("BİLGİ: Sunucu kapandı veya bağlantınız kesildi!")
 	
-@rpc("any_peer", "call_local")
+@rpc("any_peer", "call_remote")
 func send_register_data_to_server(Username, Password):
 	pass
 

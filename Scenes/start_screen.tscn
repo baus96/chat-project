@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://0ohe7igw75hv"]
 
+[ext_resource type="Script" uid="uid://c4wbpe7lbchp7" path="res://Scripts/start_screen.gd" id="1_i8r30"]
+
 [node name="StartScreen" type="Control" unique_id=1977416557]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i8r30")
 
 [node name="LoginButton" type="Button" parent="." unique_id=110710940]
 layout_mode = 0
@@ -27,6 +30,7 @@ theme_override_font_sizes/font_size = 48
 text = "register"
 
 [node name="LineEditUsername" type="LineEdit" parent="." unique_id=116915163]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,6 +48,7 @@ placeholder_text = "Enter Your Username"
 alignment = 1
 
 [node name="LineEditPassword" type="LineEdit" parent="." unique_id=323508811]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -59,3 +64,6 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 placeholder_text = "Enter Your Password"
 alignment = 1
+
+[connection signal="pressed" from="LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="RegisterButton" to="." method="_on_register_button_pressed"]

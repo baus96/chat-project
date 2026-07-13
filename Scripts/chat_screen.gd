@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_send_message_button_pressed():
-	OnlineConnection.send_chat_message_to_all(OnlineConnection.main_username, %MessageTextEdit.text)
+	OnlineConnection.send_chat_message_to_all.rpc(OnlineConnection.main_username, %MessageTextEdit.text)
 	%MessageTextEdit.text = ""
 
 func _chat_message_received(message):

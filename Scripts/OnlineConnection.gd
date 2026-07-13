@@ -65,7 +65,7 @@ func send_register_data_to_server(Username, Password):
 	
 @rpc("any_peer", "call_remote")
 func send_login_data_to_server(Username, Password):
-	main_username = Username
+	pass
 	
 @rpc("authority")
 func return_login_result(success: bool, message: String):

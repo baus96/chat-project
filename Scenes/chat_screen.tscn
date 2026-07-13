@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c4en2fuye0bab"]
+
+[ext_resource type="Script" uid="uid://cmgj4af0tghn4" path="res://Scripts/chat_screen.gd" id="1_vy133"]
+
+[node name="ChatScreen" type="Control" unique_id=1897463400]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vy133")
+
+[node name="ChatRichTextLabel" type="RichTextLabel" parent="." unique_id=679459029]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 1698.0
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/bold_font_size = 64
+theme_override_font_sizes/bold_italics_font_size = 64
+theme_override_font_sizes/italics_font_size = 64
+theme_override_font_sizes/mono_font_size = 64
+text = "asdasdasddasasd"
+
+[node name="MessageTextEdit" type="TextEdit" parent="." unique_id=1252887500]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 1698.0
+offset_right = 861.0
+offset_bottom = 1920.0
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Enter Your Text Here"
+
+[node name="SendMessageButton" type="Button" parent="." unique_id=1058242851]
+layout_mode = 0
+offset_left = 861.0
+offset_top = 1698.0
+offset_right = 1080.0
+offset_bottom = 1920.0
+theme_override_font_sizes/font_size = 32
+text = "Send"
+
+[connection signal="pressed" from="SendMessageButton" to="." method="_on_send_message_button_pressed"]

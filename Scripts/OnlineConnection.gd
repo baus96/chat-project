@@ -2,6 +2,9 @@ extends Node
 
 const PORT := 7777
 
+signal chat_message_received(message: String)
+
+var main_username
 var peer = ENetMultiplayerPeer.new()
 
 func _ready() -> void:
@@ -59,6 +62,22 @@ func _on_server_disconnected():
 @rpc("any_peer", "call_remote")
 func send_register_data_to_server(Username, Password):
 	pass
+	
+@rpc("any_peer", "call_remote")
+func send_login_data_to_server(Username, Password):
+	main_username = Username
+	
+@rpc("authority")
+func return_login_result(success: bool, message: String):
+	if success:
+		print(message)
+		get_tree().change_scene_to_file("res://Scenes/chat_screen.tscn")
+	else:
+		print(message)
 
-
+@rpc("any_peer", "call_local")
+func send_chat_message_to_all(Username, message):
+	chat_message_received.emit(str(Username) + ": " + message + "\n")
+	
+	
 	
